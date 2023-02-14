@@ -1,0 +1,42 @@
+//create useStore using Pinia and user interface.
+import { defineStore } from 'pinia';
+import { User } from '@/types/User';
+
+export const useUserStore = defineStore({
+    // unique name of the store across your application
+    id: 'user',
+    // a function that returns a fresh state
+    state: (): User => ({
+        name: '',
+        surname: '',
+        email: '',
+        password: '',
+        createdAt: '',
+        updatedAt: '',
+        usercode: '',
+    }),
+    // optional getters
+    getters: {
+        // computed properties
+        fullName(): string {
+            return `${this.name.[1]} ${this.surname}`;
+        }
+    },
+    // optional actions
+    actions: {
+        // methods
+        async login(email: string, password: string) {
+            // call the api
+            const user = await fetch(email, password);
+            // update the store
+            this.name = user.name;
+            this.surname = user.surname;
+            this.email = user.email;
+            this.password = user.password;
+            this.createdAt = user.createdAt;
+            this.updatedAt = user.updatedAt;
+            this.usercode = user.usercode;
+        }
+    }
+});
+
