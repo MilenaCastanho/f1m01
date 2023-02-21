@@ -1,19 +1,44 @@
-<script lang="ts" setup></script>
-
 <template>
-  <div>
-    <ElementNavbar />
-    <section>
-	    <slot />
-    </section>
-    <ElementFooter />
-  </div>
+  <header>
+    <Logo />
+    <nav v-for="item in menuLink" :key="item.id">
+       <NuxtLink :to="item.url">{{ item.name }}</NuxtLink>
+    </nav>
+  </header>
 </template>
-<style scoped>
-  section {
-    min-height: 100vh;
+
+<script lang="ts" setup>
+
+const logoUrl = ref( "@assets/img/logo/f1masterCom.png")
+
+const menuLink = ref(
+  [
+    {
+      id: 1,
+      name: 'Home',
+      url: '/',
+    },
+    {
+      id: 2,
+      name: 'About',
+      url: '/about',
+    },
+    {
+      id: 3,
+      name: 'Contact',
+      url: '/contact',
+    },
+  ]
+)
+
+const btn1 = ref(
+  {
+    name: 'Login',
+    url: '/login',
   }
-</style>
+)
+</script>
+
 <style scoped>
   section {
     min-height: 100vh;
@@ -21,6 +46,6 @@
     linear-gradient(180deg, #000000 -15%, rgba(0,0,0,0) 50%, #000000 130%) 0 / cover, 
     linear-gradient(#000000 1%, rgba(0,0,0,0.1), #000000 100%) 0 / 4px 4px, 
     radial-gradient(#000000 1%, rgba(0,0,0,0) 50%, #04032f 100%) 0 / 4px 4px, 
-    url() #000000 0 / cover no-repeat;
+    url("../assets/img/driver.png") #000000 0 / cover no-repeat;
   }
 </style>
