@@ -20,69 +20,21 @@
     </div>  
 </template>
 <style scoped>
-.footer {
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0px 0px 10px 0px #000;
-}
-
-/* old project */
-footer {
-  grid-area: footer;
-  display: grid;
-  justify-items: center;
-  grid-template-areas: "nav" "log" "info" "socialMedia" "disc" "copy";
-  background: black;
-  box-shadow: 0px 0px 2px 2px black;
-}
-
-footer div {
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: center;
-}
-
-footer div {
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: center;
-  padding: 0 10px;
-  width: 100px;
-}
-
-
-
-footer p {
-  color: #ddd;
-  transition: 0.3s;
-}
-footer h3 {
-  font-weight: bold;
-  color: #555555;
-  text-shadow: 1px 1px 3px black;
-}
-
-footer h3:hover {
-  color: #ddd;
-}
-
-
-footer p {
-  display: grid;
-  max-width: 50%;
-  /*grid-area: a;*/
-  max-width: 70%;
-  font-size: 0.7rem;
-  padding: 15px 10px;
-  color: #555555;
-  font-weight: bold;
-  transition: 0.3s;
+footer a {
+  color: grey;
+  width: auto;
   letter-spacing: 1px;
-  text-align: center;
+  font-size: 0.68rem;
+  font-weight: bold;
+  padding: 5px 11px;
+  display: flex;
+  text-decoration: none;
+  text-transform: capitalize;
+  /*border: solid 0.9px black;*/
+  white-space: nowrap;
+  text-shadow: 0px 0px 5px #040404;
+  background: #040404;
+  justify-content: space-around;
 }
 
 @media (min-width: 540px) {
@@ -108,10 +60,6 @@ footer a:hover {
   color: #ddd;
 }
 
-footer div img {
-  height: 100px;
-}
-
 footer img {
   height: 75px;
 }
@@ -123,7 +71,28 @@ footer img {
   }
 }
 
+footer {
+  grid-area: footer;
+  display: grid;
+  justify-items: center;
+  grid-template-areas: "nav" "log" "info" "disc" "copy";
+  background: black;
+  box-shadow: 0px 0px 2px 2px black;
+}
 
+footer div {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+}
 
+footer h5 {
+  color: grey;
+  font-weight: bold;
+}
+
+footer h5:hover {
+  color: white;
+}
 
 </style>
